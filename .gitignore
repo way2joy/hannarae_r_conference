@@ -5,3 +5,5 @@
 *.html
 rmd_files/libs/
 rmd_files/index_files/
+rmd_files/rrwithr_files/
+_site/
