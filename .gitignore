@@ -2,8 +2,11 @@
 .Rhistory
 .RData
 .Ruserdata
+images/genobio.png
 *.html
 rmd_files/libs/
+rmd_files/*.docx
 rmd_files/index_files/
 rmd_files/rrwithr_files/
 _site/
+*.docx
