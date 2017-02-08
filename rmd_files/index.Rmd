@@ -1,27 +1,26 @@
 ---
 title: "R 재현가능연구 방법으로 다이내믹 문서 만들기"
-subtitle: "Right, effcient way for data product"
+subtitle: "Data Product(보고서, 논문, 책, 블러그, 웹 사이트, 웹 앱  등)"
 author: "(주)지노바이오 고석범"
 bibliography: "../refs/rrwithr.bib"
 csl: "../refs/the-new-england-journal-of-medicine.csl"
-always_allow_html: yes
 output: 
   revealjs::revealjs_presentation:
-    self_contained: false
-    theme: simple
+    self_contained: no
+    theme: sky
     reveal_options:
       slideNumber: true
     hightlight: pygments
     center: yes
     css: myStyle.css
     lib_dir: libs
+  ioslides_presentation: default
   html_document: 
     toc: true
     toc_float: yes
     code_folding: "hide"
     theme: flatly
     number_sections: yes
-  ioslides_presentation: default
   word_document:
     reference_docx: refdocx.docx
 ---
@@ -36,7 +35,33 @@ library(plotly)
 csl <- "NEMJ"
 ```
 
-# 강의와 실습 내용 {#LecttureEx}
+
+# 인사와 강의 개요 {#LecttureEx}
+
+## 소개 {#intromyself}
+
+- 가톨릭대학고 의과대학 졸업, 신경과 전문의, R 유저
+
+- (주)지노바이오 대표: Liquid Biopsy 장비 제작 및 연구
+
+```{r}
+include_graphics("../images/genobio.png")
+```
+
+## 관심 분야와 저술/번역 {#interesets}
+
+- R: Reproducible Research, Bioinformatics
+    
+- JavaScript: Meteor, React
+
+- 다음 책: R Shiny(저술), Computer Age Statistical Inference(공동 번역 참여?)
+
+- 다음 탐구 주제: R, JavaScript 또는 htmlwidgets 패키지등을 활용한 Biological Data Visualization
+
+```{r}
+include_url("http://www.yes24.com/searchcorner/Search?keywordAd=&keyword=&domain=ALL&qdomain=%C0%FC%C3%BC&Wcode=001_005&query=%B0%ED%BC%AE%B9%FC")
+```
+
 
 ## 강의와 실습 내용 {#MainTOC}
 
@@ -166,10 +191,10 @@ include_url("http://gallery.htmlwidgets.org", height = "500px")
 
 ## Rmd 파일에 Shiny App 가지고 오기 {#ShinyApp}
 
-- `knitr::include_url()` 함수 
+- `knitr::include_app()` 함수 
 
 ```{r}
-include_url("https://shiny.rstudio.com/gallery/submitbutton-demo.html")
+include_app("https://gallery.shinyapps.io/CDCPlot/", height = "550px")
 ```
 
 
@@ -842,7 +867,7 @@ ggplot(mtcars, aes(wt, mpg)) +
   
     - 원도우에서 자주 발견
     
-    - 나의 경우에는 atom 텍스트 에디터(<https://atom.io>)와 함께 사용(깃허브 회사에게 제작한 무료)
+    - 나의 경우에는 atom 텍스트 에디터(<https://atom.io>)와 함께 사용(깃허브 회사에게 제작한 무료 에디터)
   
 
 
@@ -878,6 +903,10 @@ ggplot(mtcars, aes(wt, mpg)) +
 ## bookdown 패키지로 깃북 만들기 {#bookdown}
 
 - bookdown 패키지로 만든 bookdown 패키지 설명서: <https://bookdown.org/yihui/bookdown/>
+
+- 해들리 위캄의 Advanced R  
+
+    - <https://github.com/hadley/adv-r>
 
 ## flexdashboard 패키지로 대시보드 만들기 {#Dashboard}
 
