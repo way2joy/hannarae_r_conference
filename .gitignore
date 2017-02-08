@@ -1,0 +1,7 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+*.html
+rmd_files/libs/
+rmd_files/index_files/

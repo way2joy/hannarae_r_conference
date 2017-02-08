@@ -1,0 +1,11 @@
+---
+title: "R을 사용한 제현가능연구 방법으로 문서 만들기"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## RR with R
+
+이 문서는 R을 사용한 재현가능연구 방법으로 문서를 만들기 방법을 설명하기 위한 사례이다. 

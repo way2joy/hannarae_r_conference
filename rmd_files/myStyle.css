@@ -1,0 +1,16 @@
+.reveal li  {
+ font-size: 90%;
+}
+
+.reveal h1 {
+  color: #ea0014;
+  font-size: 1.6em;
+}
+
+.reveal h2 {
+  color: #2099ed;
+}
+
+.reveal iframe {
+  border: 1px solid;
+}

@@ -1,0 +1,18 @@
+name: rrwithr
+output_dir: _site
+navbar:
+  title: "RR with R"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "프레젠테이션"
+      href: "rmd_files/index.html"
+    - text: "실습"
+      menu:
+        - text: "실습 안내"
+          href: "exercises/index.html"
+output:
+  html_document:
+    theme: united
+
+
