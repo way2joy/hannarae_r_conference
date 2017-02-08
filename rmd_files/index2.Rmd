@@ -5,8 +5,7 @@ bibliography: "../refs/rrwithr.bib"
 csl: "../refs/the-new-england-journal-of-medicine.csl"
 always_allow_html: yes
 output: 
-  word_document:
-    reference_docx: refdocx.docx
+  word_document: default
   ioslides_presentation: default
   revealjs::revealjs_presentation:
     self_contained: false
