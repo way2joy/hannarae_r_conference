@@ -45,7 +45,7 @@ csl <- "NEMJ"
 - (주)지노바이오 대표: Liquid Biopsy 장비 제작 및 연구
 
 ```{r}
-include_graphics("../images/genobio.png")
+include_url("file:///Users/koseokbum/Dropbox/website_ex/index.html")
 ```
 
 ## 관심 분야와 저술/번역 {#interesets}
