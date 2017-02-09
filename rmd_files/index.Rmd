@@ -29,9 +29,9 @@ output:
 library(knitr)
 opts_chunk$set(echo=FALSE, comment=NA, root.dir="../")
 library("htmltools")
-library("vembedr")
 library(ggplot2)
-library(plotly)
+library(metricsgraphics)
+library(RColorBrewer)
 csl <- "NEMJ"
 ```
 
@@ -171,12 +171,13 @@ include_graphics("../images/literate.png")
 
 ##  재현가능방법 사용의 예  {#plolty}
 
-- htmlwidgets로 만들어진 `ploty` 패키지(<https://plot.ly/r/>)로 인터랙티브 플롯 생성하고, `revealjs` 패키지를 사용하여 .Rmd 파일에 넣어서 렌더링하였다.
+- `metricsgraphics` in `revealjs` presentation
 
 ```{r, echo=FALSE, fig.align='center'}
-p <- ggplot(data = diamonds, aes(x = cut, fill = clarity)) +
-            geom_bar(position = "dodge")
-ggplotly(p)
+mtcars %>%
+ mjs_plot(x=wt, y=mpg) %>%
+ mjs_point(least_squares=TRUE) %>% 
+ mjs_labs(x="Weight of Car", y="Miles per Gallon")
 ```
 
 ## 다이내믹 콘텐츠 {#Dynamic}
@@ -476,7 +477,7 @@ formatR::usage("html_document")
 
     - `revealjs`: 이 슬라이드는 이 패키지를 사용하여 만들었다. 
     
-    - `tufte`: 데이터 시각화의 선구자로 알려진 E. Tufte의 책과 핸드아웃에 디자인 
+    - `tufte`: 데이터 시각화의 선구자로 알려진 [E. Tufte](https://www.edwardtufte.com/tufte/)의 책과 핸드아웃에 디자인 
  
  
 - 이런 경우에는 다음과 같이 네임스페이스 연산자(`::`)를 사용하여 표현한다.
@@ -713,17 +714,17 @@ ggplot(mtcars, aes(wt, mpg)) +
 
 ## 청크,코드를 다이내믹하게 활용 가능  {#performance}
 
-- 코드 외부화
+- [코드 외부화](https://yihui.name/knitr/demo/externalization/)
 
-- 코드의 조건부 실행
+- [코드의 조건부 실행](https://yihui.name/knitr/demo/output/)
 
-- `code` 청크 옵션을 통해서 다이내믹하게 청크 코드 삽입할 수 있음 
+- [`code` 청크 옵션을 통해서 다이내믹하게 청크 코드 삽입할 수 있음](https://yihui.name/knitr/options/#code-chunk)
 
-- 다른 청크의 코드를 가져와 재사용 가능 
+- [다른 청크의 코드를 가져와 재사용 가능](https://yihui.name/knitr/demo/reference/)
 
-- 훅(Hooks) 함수를 지정하여 코드의 실행 전, 후에 필요한 내용을 삽입할 수 있음
+- [훅(Hooks) 함수를 지정하여 코드의 실행 전, 후에 필요한 내용을 삽입할 수 있음](https://yihui.name/knitr/hooks/)
 
-- YAML 헤더에 `params`라는 필드를 사용하여 파라미터화된 문서 생산 가능
+- [YAML 헤더에 `params`라는 필드를 사용하여 파라미터화된 문서 생산 가능](http://rmarkdown.rstudio.com/developer_parameterized_reports.html)
 
     - 하나의 소스파일로 부서별, 분기별 보고서를 다르게 생산할 수 있음
 
@@ -735,9 +736,9 @@ ggplot(mtcars, aes(wt, mpg)) +
 
 - rmarkdown 패키지에 내장된 주요 출력 포맷 함수들(더 있다)
 
-    - 'html_notebook()`
+    - [`html_notebook()`](https://www.rdocumentation.org/packages/rmarkdown/versions/1.3/topics/html_notebook)
 
-    - `html_document()`
+    - [`html_document()`](https://www.rdocumentation.org/packages/rmarkdown/versions/1.3/topics/html_document)
 
     - `pdf_document()`
 
@@ -796,14 +797,14 @@ ggplot(mtcars, aes(wt, mpg)) +
 
 ## pdf_document()로 PDF 문서 생산 {#PDFs}
 
-- PDF는 레이텍(LaTeX)을 사용하여 만들기 때문에 레이텍이 컴퓨터에 설치되어 있어야 한다.
+- PDF는 [레이텍(LaTeX)](http://people.ktug.org/xe/)을 사용하여 만들기 때문에 레이텍이 컴퓨터에 설치되어 있어야 한다.
 
-    - 원도우: MikTeX
-    - 맥: MacTeX
+    - 원도우: [MikTeX](https://miktex.org)
+    - 맥: [MacTeX](https://tug.org/mactex/)
 
 - Raw LaTeX을 사용하지 않아도 웬만한 작업이 가능
 
-    - 이전: .Rnw --> .tex --> PDF
+    - 이전: [.Rnw](/Users/koseokbum/Dropbox/Writing/star4git/DavidMasterDocx.Rnw) --> .tex --> PDF
     - 현재: .Rmd --> .md --> .tex --> PDF
 
 - 주요 서브 필드: `latex_engine: xelatex` (디폴트는 pdflatex)
@@ -898,8 +899,8 @@ ggplot(mtcars, aes(wt, mpg)) +
 
 - 지킬
 
-    - <https://github.com/yihui/knitr-jekyll>, <https://github.com/hadley/adv-r>
-
+    - <https://github.com/yihui/knitr-jekyll>
+    
 ## bookdown 패키지로 깃북 만들기 {#bookdown}
 
 - bookdown 패키지로 만든 bookdown 패키지 설명서: <https://bookdown.org/yihui/bookdown/>
