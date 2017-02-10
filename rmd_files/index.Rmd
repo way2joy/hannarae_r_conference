@@ -1,7 +1,9 @@
 ---
 title: "Dynamic Document Generation"
 subtitle: "Reproducible Research with R"
-author: "(주)지노바이오 고석범"
+author: 
+  - "(주)지노바이오 고석범"
+  - "[koseokbum github](https://github.com/koseokbum/hannarae_r_conference)"
 bibliography: "../refs/rrwithr.bib"
 csl: "../refs/the-new-england-journal-of-medicine.csl"
 output: 
