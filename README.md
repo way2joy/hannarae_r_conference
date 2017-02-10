@@ -2,7 +2,7 @@
 
 1. 다운로드한다.
 
-2. `R_conference_2017_02.Rproj` 클릭해서 RStudio 연다. 
+2. `R_conference_2017_02.Rproj` 클릭해서 RStudio 연다.
 
 3. `rmd_files` 폴더의 `index.Rmd`를 먼저 렌더링한다.
 

@@ -1,6 +1,6 @@
 ---
-title: "R 재현가능연구 방법으로 다이내믹 문서 만들기"
-subtitle: "Data Product(보고서, 논문, 책, 블러그, 웹 사이트, 웹 앱  등)"
+title: "Dynamic Document Generation"
+subtitle: "Reproducible Research with R"
 author: "(주)지노바이오 고석범"
 bibliography: "../refs/rrwithr.bib"
 csl: "../refs/the-new-england-journal-of-medicine.csl"
@@ -912,6 +912,8 @@ ggplot(mtcars, aes(wt, mpg)) +
 ## flexdashboard 패키지로 대시보드 만들기 {#Dashboard}
 
 - flexdashboard: <http://rmarkdown.rstudio.com/flexdashboard/index.html>
+
+
 
 ## 참고문헌의 표시 예: `r csl` CSL  {#REfes}
 
